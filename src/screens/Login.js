@@ -1,4 +1,4 @@
-import { Button, StyleSheet, TextInput, View } from "react-native";
+import { Alert, Button, StyleSheet, TextInput, View } from "react-native";
 
 // Importando os recursos de autenticação
 import { auth } from "../../firebase.config";
@@ -12,6 +12,13 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
+  const login = async () => {
+    if (!email || !senha) {
+      Alert.alert("Atenção", "Preencha e-mail e senha");
+      return;
+    }
+    console.log(senha, email);
+  };
   return (
     <View style={estilos.container}>
       <View style={estilos.formulario}>
@@ -27,7 +34,7 @@ export default function Login() {
           style={estilos.input}
         />
         <View style={estilos.botoes}>
-          <Button title="Entre" color="green" />
+          <Button onPress={login} title="Entre" color="green" />
         </View>
       </View>
     </View>
