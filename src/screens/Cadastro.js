@@ -1,10 +1,14 @@
 import { Button, StyleSheet, TextInput, View } from "react-native";
 
-export default function Cadastro() {
+export default function Cadastro({ navigation }) {
   return (
     <View style={estilos.container}>
       <View style={estilos.formulario}>
-        <TextInput placeholder="E-mail" style={estilos.input} />
+        <TextInput
+          keyboardType="email-address"
+          placeholder="E-mail"
+          style={estilos.input}
+        />
         <TextInput secureTextEntry placeholder="Senha" style={estilos.input} />
         <View style={estilos.botoes}>
           <Button title="Cadastre-se" color="blue" />
