@@ -56,6 +56,7 @@ export default function Login({ navigation }) {
     <View style={estilos.container}>
       <View style={estilos.formulario}>
         <TextInput
+          keyboardType="email-address"
           onChangeText={(valor) => setEmail(valor)}
           placeholder="E-mail"
           style={estilos.input}
